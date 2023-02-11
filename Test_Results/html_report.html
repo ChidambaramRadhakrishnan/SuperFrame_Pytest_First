@@ -75,12 +75,12 @@ function showFilters() {
     const checkedItems = visibleString.split(',');
 
     const filterItems = document.getElementsByClassName('filter');
-    for (let self = 0; self < filterItems.length; self++) {
-        filterItems[self].hidden = false;
+    for (let i = 0; i < filterItems.length; i++) {
+        filterItems[i].hidden = false;
 
         if (visibleString != 'all') {
-            filterItems[self].checked = checkedItems.includes(filterItems[self].getAttribute('data-test-result'));
-            filterTable(filterItems[self]);
+            filterItems[i].checked = checkedItems.includes(filterItems[i].getAttribute('data-test-result'));
+            filterTable(filterItems[i]);
         }
     }
 }
@@ -159,8 +159,8 @@ function sortTable(clicked, keyFunc) {
 }
 
 function sort(items, keyFunc, reversed) {
-    const sortArray = items.map(function(item, self) {
-        return [keyFunc(item), self];
+    const sortArray = items.map(function(item, i) {
+        return [keyFunc(item), i];
     });
 
     sortArray.sort(function(a, b) {
@@ -242,8 +242,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
     const classOutcome = outcome + ' results-table-row';
     const outcomeRows = document.getElementsByClassName(classOutcome);
 
-    for(let self = 0; self < outcomeRows.length; self++){
-        outcomeRows[self].hidden = !elem.checked;
+    for(let i = 0; i < outcomeRows.length; i++){
+        outcomeRows[i].hidden = !elem.checked;
     }
 
     const rows = findAll('.results-table-row').filter(isAllRowsHidden);
@@ -253,12 +253,12 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
 }
 </script>
     <h1>html_report.html</h1>
-    <p>Report generated on 11-Jan-2023 at 11:03:51 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
+    <p>Report generated on 13-Jan-2023 at 17:28:47 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v3.2.0</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
         <td>JAVA_HOME</td>
-        <td>C:\Program Files\Java\jdk-18.0.2.1</td></tr>
+        <td>C:\Program Files\Eclipse Adoptium\jdk-17.0.5.8-hotspot\</td></tr>
       <tr>
         <td>Packages</td>
         <td>{"pluggy": "1.0.0", "pytest": "7.2.0"}</td></tr>
@@ -272,8 +272,8 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <td>Python</td>
         <td>3.11.0</td></tr></table>
     <h2>Summary</h2>
-    <p>1 tests ran in 20.82 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">1 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>2 tests ran in 21.84 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="passed">2 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="failed">0 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filterTable(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -288,7 +288,16 @@ function filterTable(elem) { // eslint-disable-line no-unused-vars
         <tr>
           <td class="col-result">Passed</td>
           <td class="col-name">Test/Test_WindowHandle.py::Test_Window_Handles::test_Window_Handles[chrome]</td>
-          <td class="col-duration">20.49</td>
+          <td class="col-duration">16.50</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="empty log">No log output captured.</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">Test/Test_WindowHandle.py::Test_Window_Handles::test_sendKeys[chrome]</td>
+          <td class="col-duration">16.51</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">

@@ -10,11 +10,11 @@ def driver_launch(request):
     if request.param == "chrome":
         s_driver = webdriver.Chrome(ChromeDriverManager().install())
     request.cls.driver = s_driver
+    print("-----Test Started-----")
     s_driver.get(config.URL)
     s_driver.implicitly_wait(10)
     yield
+    print("----Test Completed----")
     s_driver.quit()
 
-
-
-
+    # how to create class
